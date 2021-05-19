@@ -1,0 +1,232 @@
+<?xml version="1.0" ?>
+<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find arm_description)/urdf/arm.trans" />
+<xacro:include filename="$(find arm_description)/urdf/arm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.012579936096648252 0.005828122818691775 0.08232623735929202"/>
+    <mass value="7.154111516956614"/>
+    <inertia ixx="0.039325" ixy="-0.000176" ixz="-0.005645" iyy="0.061341" iyz="-4.4e-05" izz="0.071469"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.108294229870772 0.010456900370286687 0.1673448904480454"/>
+    <mass value="0.3248629426538314"/>
+    <inertia ixx="0.003857" ixy="-6e-06" ixz="-0.002325" iyy="0.005264" iyz="-9e-06" izz="0.001767"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.02654 0.007588 -0.204187"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/shoulder_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.02654 0.007588 -0.204187"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/shoulder_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="elbow_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.16988410714457147 -0.010887148082396297 -0.12857019394868807"/>
+    <mass value="0.14217501750592101"/>
+    <inertia ixx="0.000748" ixy="-6e-06" ixz="-0.000924" iyy="0.001955" iyz="-5e-06" izz="0.00127"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.221381 -0.01276 -0.505424"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.221381 -0.01276 -0.505424"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/elbow_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.00010898939789808632 0.0039908182646140496 0.016244011331448316"/>
+    <mass value="0.01246916080662524"/>
+    <inertia ixx="4e-06" ixy="-0.0" ixz="0.0" iyy="4e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.05813 0.002649 -0.293742"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.05813 0.002649 -0.293742"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/wrist_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="grip_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0387306980409022 -0.0001993886963191098 0.004147426129162524"/>
+    <mass value="0.012180779699964627"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="3e-06" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.044775 -0.001375 -0.316816"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/grip_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.044775 -0.001375 -0.316816"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/grip_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="arm_base_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.005489997625429028 -0.0026395874824817313 0.017328163094481264"/>
+    <mass value="0.3055003056442891"/>
+    <inertia ixx="0.000455" ixy="1e-06" ixz="1.6e-05" iyy="0.000272" iyz="-0.0" izz="0.000597"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.027776 -0.005043 -0.167275"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.027776 -0.005043 -0.167275"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="intel_cam_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.006092030730033164 2.2847487162273297e-05 0.015032284285248443"/>
+    <mass value="0.015667625068621845"/>
+    <inertia ixx="9e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="8e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.058353 -0.001318 -0.331745"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/intel_cam_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.058353 -0.001318 -0.331745"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/intel_cam_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="realsense_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.011574951605095508 0.0034559271648108092 -0.00024446378820097703"/>
+    <mass value="0.04228675377977692"/>
+    <inertia ixx="2.8e-05" ixy="0.0" ixz="-0.0" iyy="4e-06" iyz="-0.0" izz="2.8e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.055932 -0.001319 -0.346758"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/realsense_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver_default"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.055932 -0.001319 -0.346758"/>
+    <geometry>
+      <mesh filename="package://arm_description/meshes/realsense_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev38" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.001236 -0.012631 0.036912"/>
+  <parent link="arm_base_1"/>
+  <child link="shoulder_link_1"/>
+  <axis xyz="-0.005851 0.999983 0.000835"/>
+</joint>
+
+<joint name="Rev39" type="continuous">
+  <origin rpy="0 0 0" xyz="0.194841 0.020348 0.301237"/>
+  <parent link="shoulder_link_1"/>
+  <child link="elbow_link_1"/>
+  <axis xyz="0.005851 -0.999983 -0.000835"/>
+</joint>
+
+<joint name="Rev40" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.279511 -0.015409 -0.211682"/>
+  <parent link="elbow_link_1"/>
+  <child link="wrist_link_1"/>
+  <axis xyz="-0.005851 0.999983 0.000835"/>
+</joint>
+
+<joint name="Rigid41" type="fixed">
+  <origin rpy="0 0 0" xyz="0.013355 0.004024 0.023074"/>
+  <parent link="wrist_link_1"/>
+  <child link="grip_link_1"/>
+</joint>
+<gazebo>
+      <plugin name="gazebo_ros_vacuum_gripper" filename="libgazebo_ros_vacuum_gripper.so">
+        <robotNamespace>/arm</robotNamespace>
+        <bodyName>wrist_link_1</bodyName>
+        <topicName>grasping</topicName>
+        <maxForce>50</maxForce>
+        <maxDistance>0.05</maxDistance>
+        <minDistance>0.01</minDistance>
+      </plugin>
+</gazebo>
+
+<joint name="Rev42" type="continuous">
+  <origin rpy="0 0 0" xyz="0.027776 0.005043 0.167275"/>
+  <parent link="base_link"/>
+  <child link="arm_base_1"/>
+  <axis xyz="0.010859 -0.000772 0.999941"/>
+</joint>
+
+<joint name="Rigid43" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.000223 0.003967 0.038003"/>
+  <parent link="wrist_link_1"/>
+  <child link="intel_cam_link_1"/>
+</joint>
+
+<joint name="Rigid48" type="fixed">
+  <origin rpy="0 0 0" xyz="0.002421 1e-06 0.015013"/>
+  <parent link="intel_cam_link_1"/>
+  <child link="realsense_1"/>
+</joint>
+
+</robot>
